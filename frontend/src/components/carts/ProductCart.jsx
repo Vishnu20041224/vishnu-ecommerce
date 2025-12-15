@@ -8,7 +8,7 @@ import { getDeliveryDateFormatted, formatPrice } from "../../redux/slice/commonf
 import { orderNowHeadelClickSlice, getOrderNowProduct } from "../../redux/slice/orderSlice"
 import { warningToast } from "../../redux/slice/commonfunctionSlice"
 import RatingStars from "../ui/ratingStarts"
-import Footer from "../footer.jsx";
+import Footer from "../components/FooterCart.jsx"
 import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
