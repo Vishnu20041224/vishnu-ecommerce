@@ -5,7 +5,7 @@ import { Loader2 } from "lucide-react"
 import VerticalCart from "../components/carts/VerticalCart"
 import FilterProduct from '../components/FilterProduct'
 import VerticalCartLoader from "../components/carts/VerticalCartLoader"
-import Footer from "../components/footer.jsx";
+import Footer from "../components/FooterCart.jsx"
 
 
 const TshirtPage = () => {

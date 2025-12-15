@@ -12,7 +12,7 @@ import heropage2 from "../assets/HeroImgs/2.jpg"
 import heropage3 from "../assets/HeroImgs/3.jpg"
 import heropage4 from "../assets/HeroImgs/4.jpg"
 import Autoplay from "embla-carousel-autoplay"
-import Footer from "../components/footer.jsx";
+import Footer from "../components/FooterCart.jsx"
 import {
   Carousel,
   CarouselContent,

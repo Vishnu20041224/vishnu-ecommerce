@@ -6,7 +6,7 @@ import { getAllOrders, getOneOrders } from "../redux/slice/orderSlice.js"
 import { useNavigate } from "react-router-dom"
 import { getDeliveryDateFormatted, formatPrice } from "../redux/slice/commonfunctionSlice.js"
 import VerticalCartLoader from '../components/carts/VerticalCartLoader.jsx';
-import Footer from "../components/footer.jsx";
+import Footer from "../components/FooterCart.jsx"
 
 const Orders = () => {
 

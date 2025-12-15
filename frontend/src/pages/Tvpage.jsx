@@ -4,7 +4,7 @@ import { getProduct } from '../redux/slice/productSlice'
 import HorizontalCart from '../components/carts/HorizontalCart'
 import FilterProduct from '../components/FilterProduct'
 import { Loader2 } from 'lucide-react'
-import Footer from "../components/footer.jsx";
+import Footer from "../components/FooterCart.jsx"
 
 const Tvpage = () => {
   let { loading, tvProducts } = useSelector((state) => state.product)

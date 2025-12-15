@@ -6,8 +6,7 @@ import { Link, useNavigate } from "react-router-dom"
 import HorizontalCartLoader from "../components/carts/HorizontalCartLoader.jsx"
 
 import { formatPrice, getDeliveryDateFormatted } from "../redux/slice/commonfunctionSlice"
-import Footer from "../components/footer.jsx";
-
+import Footer from "../components/FooterCart.jsx"
 
 import { deleteAddToCart, getAddToCart, increaseAddToCart, decreaseAddToCart, deleteAllAddToCart } from "../redux/slice/addToCartSlice"
 import { orderAllProduct, getOrderNowProduct } from "../redux/slice/orderSlice"

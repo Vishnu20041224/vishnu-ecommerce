@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
 import { authSignUp } from "../redux/slice/authSlice"
 import { useCookies } from "react-cookie";
-import Footer from "../components/footer.jsx";
+import Footer from "../components/FooterCart.jsx"
 
 const Signup = () => {
 

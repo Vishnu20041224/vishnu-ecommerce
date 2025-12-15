@@ -6,7 +6,7 @@ import { getProduct } from '../redux/slice/productSlice'
 import { getAllOrders } from '../redux/slice/orderSlice'
 import { getAddToCart } from '../redux/slice/addToCartSlice'
 import { useCookies } from "react-cookie";
-import Footer from "../components/footer.jsx";
+import Footer from "../components/FooterCart.jsx"
 
 const Login = () => {
 

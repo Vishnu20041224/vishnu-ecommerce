@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import HorizontalCart from '../components/carts/HorizontalCart';
 import VerticalCart from '../components/carts/VerticalCart';
 import { Loader2 } from 'lucide-react';
-import Footer from "../components/footer.jsx";
+import Footer from "../components/FooterCart.jsx"
 
 const SearchPage = () => {
     const { loading, filteredProducts } = useSelector((state) => state.product);

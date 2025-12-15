@@ -5,7 +5,7 @@ import { Loader2 } from "lucide-react"
 import VerticalCart from "../components/carts/VerticalCart"
 import FilterProduct from '../components/FilterProduct'
 import HorizontalCartLoader from "../components/carts/HorizontalCartLoader"
-import Footer from "../components/footer.jsx";
+import Footer from "../components/FooterCart.jsx"
 
 const ShoePage = () => {
   let dispatch = useDispatch()

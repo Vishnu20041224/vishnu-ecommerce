@@ -5,7 +5,7 @@ import HorizontalCart from '../components/carts/HorizontalCart'
 import FilterProduct from '../components/FilterProduct'
 import { Loader2 } from 'lucide-react'
 import HorizontalCartLoader from '../components/carts/HorizontalCartLoader'
-import Footer from "../components/footer.jsx";
+import Footer from "../components/FooterCart.jsx"
 
 const HeadPhonepage = () => {
   let { loading, headPhoneProducts } = useSelector((state) => state.product)

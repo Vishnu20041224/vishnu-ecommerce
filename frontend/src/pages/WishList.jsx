@@ -4,6 +4,7 @@ import { useCookies } from 'react-cookie'
 import { useEffect } from "react"
 import VerticalCart from "../components/carts/VerticalCart"
 import VerticalCartLoader from "../components/carts/VerticalCartLoader"
+import Footer from "../components/FooterCart.jsx"
 
 const WishList = () => {
   const dispatch = useDispatch()
@@ -45,6 +46,7 @@ const WishList = () => {
             {error}
           </h2>
         </div>
+        <Footer />
       </>
     )
   }
@@ -67,6 +69,8 @@ const WishList = () => {
             Your Wish List is empty
           </h2>
         </div>
+        <Footer />
+
       </>
     )
   }
@@ -77,6 +81,8 @@ const WishList = () => {
           <VerticalCart product={product} key={product._id} />
         ))}
       </div>
+      <Footer />
+
     </>
   )
 }
