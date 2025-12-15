@@ -17,7 +17,15 @@ import userAddressRouter from "./router/userAddressRouter.js"
 
 const app = express()
 dotenv.config()
-app.use(cors())
+app.use(cors({
+  origin: [
+    "https://vishnu-ecommerce-vle9-git-main-vishnu-shankars-projects.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true
+}))
+
+app.options("*", cors())
 app.use(express.json())
 
 const PORT = process.env.PORT
