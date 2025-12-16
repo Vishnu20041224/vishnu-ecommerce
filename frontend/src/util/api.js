@@ -4,7 +4,7 @@ const API = axios.create({
     baseURL: import.meta.env.VITE_API_URL,
     withCredentials: true
 })
-
+console.log(import.meta.env.VITE_API_URL)
 // Fetch Product 
 
 export const fetchProduct = (query)=>API.get("/products",{params:query})
