@@ -26,6 +26,7 @@ import SearchPage from './pages/searchPage.jsx'
 import {NavigationMenuDemo} from "./components/Navigation.jsx"
 
 import { Toaster } from "@/components/ui/sonner"
+import HomeLoading from './components/carts/HomeLoading.jsx'
 
 function App() {
 

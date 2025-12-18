@@ -21,9 +21,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Link } from "react-router-dom"
+import HomeLoading from "../components/carts/HomeLoading.jsx";
 
 const Home = () => {
-  const { allproducts, phoneProducts, laptopProducts, shirtProducts, tshirtProducts, shoeProducts, headPhoneProducts, smartWatchProducts, sportProducts, tvProducts } = useSelector((state) => state.product)
+  const { loading, allproducts, phoneProducts, laptopProducts, shirtProducts, tshirtProducts, shoeProducts, headPhoneProducts, smartWatchProducts, sportProducts, tvProducts } = useSelector((state) => state.product)
   const [cookies] = useCookies(["token"])
   const dispatch = useDispatch()
 
@@ -149,7 +150,7 @@ const Home = () => {
     })
   }
 
-    const shoeScrollRef = useRef(null)
+  const shoeScrollRef = useRef(null)
 
   const shoescrollRight = () => {
     if (!shoeScrollRef.current) return
@@ -203,6 +204,16 @@ const Home = () => {
 
     // console.log(randomProducts)
   }, [dispatch, cookies.token])
+
+
+  if (allproducts.length === 0) {
+    return (
+      <>
+        <HomeLoading />
+
+      </>
+    )
+  }
 
   return (
     <div className="w-full h-fit md:h-[90vh] bg-gray-100 releative">
@@ -398,7 +409,7 @@ const Home = () => {
         </div>
 
         <div className="bg-white p-1 md:p-2 lg:p-3 rounded-md">
-          <Link to={`/smartwatch`} className="text-sm md:text-base lg:text-2xl font-semibold mb-2 line-clamp-1 capitalize">timeless Classics</Link> 
+          <Link to={`/smartwatch`} className="text-sm md:text-base lg:text-2xl font-semibold mb-2 line-clamp-1 capitalize">timeless Classics</Link>
           <div className="grid grid-cols-2 gap-2">
             {timelessClassics.map((product) => (
               <Link to={`/${product.catergory}/product/${product._id}`} key={product._id} className="border p-1 md:p-2 rounded-md hover:shadow-lg transition-shadow duration-300">
@@ -423,8 +434,9 @@ const Home = () => {
         <h1 onClick={shoescrollRight} className=" p-1 absolute top-1/2 right-1 bg-white cursor-pointer rounded-full"><ArrowBigRightDash /></h1>
       </div>
 
-      <Footer/>
+      <Footer />
     </div>
+
   )
 }
 
