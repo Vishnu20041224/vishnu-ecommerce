@@ -17,7 +17,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: ["http://localhost:5173", "https://vishnu-ecommerce-frontend-24.vercel.app"],
+  origin: ["http://localhost:5173", "https://vishnu-ecommerce-frontend.onrender.com"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
 }));
