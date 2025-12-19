@@ -12,6 +12,10 @@ const Sport = () => {
   let dispatch = useDispatch()
   let { loading, sportProducts } = useSelector((state) => state.product)
 
+  window.onload = () => {
+  window.scrollTo(0, 0);
+};
+
   useEffect(() => {
     if (sportProducts.length <= 0) {
       dispatch(getProduct({}))

@@ -81,6 +81,10 @@ const ProductCart = () => {
 
   // product.resolution
 
+  window.onload = () => {
+  window.scrollTo(0, 0);
+};
+
   // select
   useEffect(() => {
     if (allproducts.length <= 0) {

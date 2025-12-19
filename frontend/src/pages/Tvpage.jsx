@@ -8,7 +8,13 @@ import Footer from "../components/FooterCart.jsx"
 
 const Tvpage = () => {
   let { loading, tvProducts } = useSelector((state) => state.product)
+  
   const dispatch = useDispatch()
+
+  window.onload = () => {
+  window.scrollTo(0, 0);
+};
+
   useEffect(() => {
     if (tvProducts.length <= 0) {
       dispatch(getProduct({}))

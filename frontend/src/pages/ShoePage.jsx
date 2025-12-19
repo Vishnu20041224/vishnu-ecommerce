@@ -11,6 +11,10 @@ const ShoePage = () => {
   let dispatch = useDispatch()
   let { loading, shoeProducts } = useSelector((state) => state.product)
 
+  window.onload = () => {
+  window.scrollTo(0, 0);
+};
+
   useEffect(() => {
     if (shoeProducts.length <= 0) {
       dispatch(getProduct({}))

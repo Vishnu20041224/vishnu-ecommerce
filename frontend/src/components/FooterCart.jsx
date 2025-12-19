@@ -2,6 +2,7 @@ import bestPrice from "../assets/FooterIcone/best-price.png"
 import cashBack from "../assets/FooterIcone/refund2.png"
 import van from "../assets/FooterIcone/free-shipping.png"
 import { MapPin, Headset, Mail } from 'lucide-react';
+import { Link } from "react-router-dom";
 const FooterCart = () => {
   return (
      <>
@@ -63,28 +64,28 @@ const FooterCart = () => {
     
                             </div>
     
-                            <div className="py-3 col-span-1">
+                            <div className="py-3 col-span-1 flex flex-col gap-1">
                                 <h1 className="text-2xl font-semibold md:mb-4">Features</h1>
-                                <h1 className="text-base text-gray-400 mb-2 md:mb-4">Add To Cart</h1>
-                                <h1 className="text-base text-gray-400 mb-2 md:mb-4">Add To Cart</h1>
-                                <h1 className="text-base text-gray-400 mb-2 md:mb-4">Add To Cart</h1>
-                                <h1 className="text-base text-gray-400 mb-2 md:mb-4">Add To Cart</h1>
+                                <Link to={"/addtocart"} className="text-base text-gray-400 mb-1 md:mb-2">Add To Cart</Link>
+                                <Link to={"/wishlist"} className="text-base text-gray-400 mb-1 md:mb-2">Wish List</Link>
+                                <Link to={"/orders"} className="text-base text-gray-400 mb-1 md:mb-2">Orders</Link>
+                                <Link to={"/orders"} className="text-base text-gray-400 mb-1 md:mb-2">Order Status</Link>
                             </div>
     
-                             <div className="py-3 col-span-1">
+                             <div className="py-3 col-span-1 flex flex-col gap-1">
                                 <h1 className="text-2xl font-semibold md:mb-4">Category</h1>
-                                <h1 className="text-base text-gray-400 mb-2 md:mb-4">Home Page</h1>
-                                <h1 className="text-base text-gray-400 mb-2 md:mb-4">Phone Products</h1>
-                                <h1 className="text-base text-gray-400 mb-2 md:mb-4">Shirt Products</h1>
-                                <h1 className="text-base text-gray-400 mb-2 md:mb-4">tv Products</h1>
+                                <Link to={"/"} className="text-base text-gray-400 mb-1 md:mb-2">Home Page</Link>
+                                <Link to={"/phone"} className="text-base text-gray-400 mb-1 md:mb-2">Phone Products</Link>
+                                <Link to={"/shirt"} className="text-base text-gray-400 mb-1 md:mb-2">Shirt Products</Link>
+                                <Link to={"/tv"} className="text-base text-gray-400 mb-1 md:mb-2">tv Products</Link>
                             </div>
     
-                            <div className="py-3 col-span-1">
+                            <div className="py-3 col-span-1 flex flex-col gap-1">
                                 <h1 className="text-2xl font-semibold md:mb-4">Help Center</h1>
-                                <h1 className="text-base text-gray-400 mb-2 md:mb-4">Conact</h1>
-                                <h1 className="text-base text-gray-400 mb-2 md:mb-4">Payments</h1>
-                                <h1 className="text-base text-gray-400 mb-2 md:mb-4">Refund</h1>
-                                <h1 className="text-base text-gray-400 mb-2 md:mb-4">Shipping</h1>
+                                <h1 className="text-base text-gray-400 mb-1 md:mb-2">Conact</h1>
+                                <h1 className="text-base text-gray-400 mb-1 md:mb-2">Payments</h1>
+                                <h1 className="text-base text-gray-400 mb-1 md:mb-2">Refund</h1>
+                                <Link to={"/orders"} className="text-base text-gray-400 mb-1 md:mb-2">Shipping</Link>
                             </div>
     
     

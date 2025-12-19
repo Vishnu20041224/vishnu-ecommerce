@@ -60,6 +60,10 @@ const WishList = () => {
     )
   }
 
+  window.onload = () => {
+    window.scrollTo(0, 0);
+  };
+
   // 🧺 Empty wishlist
   if (wishListProduct.length === 0) {
     return (

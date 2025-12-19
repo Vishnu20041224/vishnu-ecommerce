@@ -302,6 +302,10 @@ const AddToCart = () => {
     dispatch(decreaseAddToCart({ id, token: cookies.token }))
   }
 
+  window.onload = () => {
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
 
     if (addToCartProduct.length > 0 && cookies.token) {

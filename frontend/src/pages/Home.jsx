@@ -214,7 +214,9 @@ const Home = () => {
       </>
     )
   }
-
+window.onload = () => {
+  window.scrollTo(0, 0);
+};
   return (
     <div className="w-full h-fit md:h-[90vh] bg-gray-100 releative">
       <Carousel

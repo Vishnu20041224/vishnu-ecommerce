@@ -8,7 +8,13 @@ import Footer from "../components/FooterCart.jsx"
 
 const SmartWatchPage = () => {
   let { loading, smartWatchProducts } = useSelector((state) => state.product)
+  
   const dispatch = useDispatch()
+
+  window.onload = () => {
+  window.scrollTo(0, 0);
+};
+
   useEffect(() => {
     if (smartWatchProducts.length <= 0) {
       dispatch(getProduct({}))

@@ -54,9 +54,9 @@ const AdminProductes = () => {
                 const item = listOfSearchItem[selectedIndex];
                 setSearchQuery("");
                 setListOfSearchItem([]);
-                consoel.log(listOfSearchItem)
+                console.log(listOfSearchItem)
                 setSelectedIndex(-1);
-                navigate(`admin/products/product/${item._id}`);
+                navigate(`product/${item._id}`);
                 //  admin/products/product/693802123fbb979a2711bff6
             } else {
                 searchProduct(); // search if no item selected
@@ -156,13 +156,14 @@ const AdminProductes = () => {
                                 {searchQuery && listOfSearchItem.length > 0 && (
                                     <div className='absolute bg-white mt-1 top-10  max-h-60 overflow-y-auto w-full sm:max-w-md border border-gray-300 rounded-md shadow-lg z-10'>
                                         {listOfSearchItem.map((item, index) => (
-                                            <div
+                                            <Link 
+                                                to={`product/${item._id}`}
                                                 key={item._id}
                                                 onClick={() => {
                                                     setSearchQuery("");
                                                     setListOfSearchItem([]);
                                                     setSelectedIndex(-1);
-                                                    navigate(`admin/products/product/${item._id}`);
+                                                    navigate(`product/${item._id}`);
                                                     // admin/products/product/693802123fbb979a2711bff6
                                                 }}
                                                 className={`px-4 py-2 cursor-pointer flex gap-1 items-center ${index === selectedIndex ? "bg-gray-200" : ""
@@ -170,7 +171,7 @@ const AdminProductes = () => {
                                             >
                                                 <img className='w-8 aspect-square' src={item.mainImg} alt={item.name} />
                                                 <span className='line-clamp-1'>{item.ditails}</span>
-                                            </div>
+                                            </Link>
                                         ))}
                                     </div>
                                 )}

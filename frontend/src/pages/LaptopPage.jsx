@@ -9,11 +9,15 @@ import HorizontalCartLoader from '../components/carts/HorizontalCartLoader';
 import Footer from "../components/FooterCart.jsx"
 
 const LaptopPage = () => {
-  let { loading, laptopProducts,filteredProducts } = useSelector((state) => state.product);
+  let { loading, laptopProducts, filteredProducts } = useSelector((state) => state.product);
   const dispatch = useDispatch();
 
   const productsToShow =
     filteredProducts.length > 0 ? filteredProducts : laptopProducts;
+
+  window.onload = () => {
+    window.scrollTo(0, 0);
+  };
 
   useEffect(() => {
     if (laptopProducts.length === 0) {
@@ -23,7 +27,7 @@ const LaptopPage = () => {
 
   if (loading) {
     return (
-      <HorizontalCartLoader/>
+      <HorizontalCartLoader />
     );
   }
 
@@ -39,7 +43,7 @@ const LaptopPage = () => {
           ))}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

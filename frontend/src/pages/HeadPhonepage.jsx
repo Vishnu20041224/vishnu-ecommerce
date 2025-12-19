@@ -10,6 +10,9 @@ import Footer from "../components/FooterCart.jsx"
 const HeadPhonepage = () => {
   let { loading, headPhoneProducts } = useSelector((state) => state.product)
   const dispatch = useDispatch()
+  window.onload = () => {
+  window.scrollTo(0, 0);
+};
   useEffect(() => {
     if (headPhoneProducts.length <= 0) {
       dispatch(getProduct({}))

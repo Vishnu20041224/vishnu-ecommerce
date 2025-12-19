@@ -12,6 +12,10 @@ const ShirtPage = () => {
   let dispatch = useDispatch()
   let { loading, shirtProducts } = useSelector((state) => state.product)
 
+  window.onload = () => {
+  window.scrollTo(0, 0);
+};
+
   useEffect(() => {
     if (shirtProducts.length <= 0) {
       dispatch(getProduct({}))

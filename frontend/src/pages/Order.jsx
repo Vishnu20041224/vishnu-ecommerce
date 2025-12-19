@@ -10,6 +10,10 @@ const Order = () => {
 
     let { order } = useSelector((state) => state.order)
 
+    window.onload = () => {
+  window.scrollTo(0, 0);
+};
+
     function getDeliveryProgress(createdAt, deliveryDateString) {
 
         const created = new Date(createdAt);
