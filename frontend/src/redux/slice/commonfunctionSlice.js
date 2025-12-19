@@ -52,6 +52,25 @@ export const warningToast = (title, message,navigate) => {
     })
 }
 
+export const successAddToCartToast = (title, message, navigate) => {
+  toast.success(title, {
+    description: `${message || "Product added to cart successfully"}`,
+    action: {
+      label: "Go to Cart",
+      background: "#ffffff", // White button
+      color: "#16a34a",      // Green text
+      onClick: () => navigate("/addtocart"),
+    },
+    style: {
+      background: "#22c55e",        // Green-500 (success)
+      color: "#ffffff",             // White text
+      border: "1px solid #16a34a",  // Green-600
+      boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+      borderRadius: "12px",
+    }
+  });
+};
+
 const initialState = {
 }
 

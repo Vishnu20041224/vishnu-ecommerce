@@ -23,10 +23,17 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Payment from './pages/payment'
 import SearchPage from './pages/searchPage.jsx'
-import {NavigationMenuDemo} from "./components/Navigation.jsx"
+import { NavigationMenuDemo } from "./components/Navigation.jsx"
 
 import { Toaster } from "@/components/ui/sonner"
+import Admin from "./Admin/Admin.jsx"
+
 import HomeLoading from './components/carts/HomeLoading.jsx'
+import AdminOrders from './Admin/AdminOrders.jsx'
+import AdminProductes from './Admin/AdminProductes.jsx'
+import AdminProductCart from './components/carts/AdminProductCart.jsx'
+
+
 
 function App() {
 
@@ -37,7 +44,7 @@ function App() {
         <div className='relative'>
           <div className='top-0 sticky w-full z-10'>
             {/* <Navbar /> */}
-            <NavigationMenuDemo/>
+            <NavigationMenuDemo />
           </div>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -51,6 +58,13 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
 
+            {/* Admin */}
+
+            <Route path='/admin/orders' element={< AdminOrders/>} />
+            <Route path='/admin/products' element={<AdminProductes />} />
+            <Route path='/admin/products/product/:id' element={<AdminProductCart/>} />
+
+
             {/* Catogory Page */}
             <Route path="/phone" element={<PhonePage />} />
             <Route path="/laptop" element={<LaptopPage />} />
@@ -62,7 +76,7 @@ function App() {
             <Route path="/smartwatch" element={<SmartWatchPage />} />
             <Route path="/shirt" element={<ShirtPage />} />
 
-            <Route path="/search" element={<SearchPage/>} />
+            <Route path="/search" element={<SearchPage />} />
 
             <Route path=":catodory/product/:id" element={<ProductCart />} />
             <Route path="/payment" element={<Payment />} />

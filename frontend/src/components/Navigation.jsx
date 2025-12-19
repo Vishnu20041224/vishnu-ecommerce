@@ -1,7 +1,7 @@
 
 import * as React from "react"
 import { Link } from "react-router-dom"
-import { Menu, X, CircleUserRound, Search, Heart, ShoppingCart, ChevronDown, ChevronUp, ListFilter, ShoppingBasket, Home } from "lucide-react"
+import { Menu, X, CircleUserRound, Search, Heart, ShoppingCart, ChevronDown, ChevronUp, ListFilter, ShoppingBasket, Home, UserStar } from "lucide-react"
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import {
@@ -108,9 +108,11 @@ export function NavigationMenuDemo() {
   const isMobile = useIsMobile()
   let [cookies, setCookie, removeCookie] = useCookies(["user", "token"])
   let [userName, setUserName] = useState(null);
+  let [userIsAdmin, setUserIsAdmin] = useState(false);
   // mobile sidebar
   let [isSideBarOpen, setIsSideBarOpen] = useState(false);
   let [isCategoryOpen, setIsCategoryOpen] = useState(false);
+  let [isAdminOpen, setIsAdminOpen] = useState(false);
 
   let { allproducts, filteredProducts } = useSelector((state) => state.product);
   let { addToCartProduct } = useSelector((state) => state.addToCart);
@@ -170,7 +172,10 @@ export function NavigationMenuDemo() {
     if (cookies.user) {
       try {
         const parsed = cookies.user;
+        setUserIsAdmin(cookies.user.isAdmin)
         setUserName(parsed.name);
+        console.log(cookies.user.isAdmin)//isAdmin
+        console.log(cookies.user)//isAdmin
       } catch (error) {
         console.error("Invalid JSON user cookie:", error);
       }
@@ -184,7 +189,7 @@ export function NavigationMenuDemo() {
           <Menu />
         </div>
         {isSideBarOpen && (
-          <div className="absolute top-0 left-0 w-64 h-full min-h-screen bg-gray-400 shadow-lg z-50 py-4 border">
+          <div className="absolute top-0 left-0 w-64 h-screen min-h-screen bg-gray-400 shadow-lg z-50 py-4 border overflow-scroll">
             <div className="flex justify-between items-center pb-2 px-3">
               <h2 className="text-lg font-semibold ">Menu</h2>
               <button onClick={() => setIsSideBarOpen(false)} className=" hover:text-gray-800">
@@ -237,7 +242,24 @@ export function NavigationMenuDemo() {
                   <Link to={"/wishlist"}>Wish Lsit</Link>
                 </div>
 
+                {/* admin */}
+                {userIsAdmin && <div>
 
+                  <div className="flex gap-3 " onClick={() => setIsAdminOpen(!isAdminOpen)}>
+                    <UserStar />
+                    <div className="flex gap-2">
+                      <h1>Admin</h1>
+                      {isAdminOpen ? <ChevronDown /> : <ChevronUp />}
+                    </div>
+                  </div>
+
+
+                  {isAdminOpen && <div className="px-2 pt-3 flex flex-col gap-2" onClick={() => setIsSideBarOpen(false)}>
+                    <Link to={"/admin/orders"}>All Orders</Link>
+                    <Link to={"/admin/products"}>Products</Link>
+                  </div>}
+
+                </div>}
 
               </div>
 
@@ -473,6 +495,12 @@ export function NavigationMenuDemo() {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
+
+          {userIsAdmin && <NavigationMenuItem className="hidden md:block">
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <Link className="capitalize flex gap-2" to={"/admin/orders"}>Admin</Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>}
 
 
           <NavigationMenuItem className="hidden md:block">

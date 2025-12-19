@@ -5,6 +5,7 @@ import addToCartReducer from "./slice/addToCartSlice.js"
 import wishListReducer from "./slice/wishListSlice.js"
 import orderReducer from "./slice/orderSlice.js"
 import userAddressReducer from "./slice/userAddressSlice.js"
+import adminReducer from "./slice/adminSlice.js"
 
 import commonfunctionReducer from "./slice/commonfunctionSlice.js"
 
@@ -18,7 +19,8 @@ const store = configureStore({
         common:commonfunctionReducer,
         wishList:wishListReducer,
         order:orderReducer,
-        userAddress:userAddressReducer
+        userAddress:userAddressReducer,
+        admin:adminReducer,
 
     }
 })

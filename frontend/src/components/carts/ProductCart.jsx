@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom"
 import { Heart, Star, StarHalf, Loader2, Circle, Package, ShoppingCart, ArrowBigRightDash, ArrowBigLeftDash } from 'lucide-react';
 import { getProduct, getOneProduct } from "../../redux/slice/productSlice";
 import { likeProduct, getLikeProduct } from "../../redux/slice/wishListSlice"
-import { getDeliveryDateFormatted, formatPrice } from "../../redux/slice/commonfunctionSlice"
+import { getDeliveryDateFormatted, formatPrice ,successAddToCartToast} from "../../redux/slice/commonfunctionSlice"
 import { orderNowHeadelClickSlice, getOrderNowProduct } from "../../redux/slice/orderSlice"
 import { warningToast } from "../../redux/slice/commonfunctionSlice"
 import RatingStars from "../ui/ratingStarts"
@@ -380,6 +380,7 @@ const ProductCart = () => {
     console.log(defalutShoeSize)
 
     addToCartHeadelClickSlice(data, dispatch, cookie.token)
+     successAddToCartToast("Add To Cart",data.name,navigate)
   }
 
   const headleClickLikeProduct = async (product) => {

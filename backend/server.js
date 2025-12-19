@@ -11,7 +11,7 @@ import addToCartRouter from "./router/addToCartRouter.js";
 import likeRouter from "./router/wishListRouter.js";
 import ordersRouter from "./router/ordersRouter.js";
 import userAddressRouter from "./router/userAddressRouter.js";
-
+import adminRouter from "./router/adminRouter.js"
 dotenv.config();
 
 const app = express();
@@ -37,6 +37,7 @@ app.use("/api", addToCartRouter);
 app.use("/api", likeRouter);
 app.use("/api", ordersRouter);
 app.use("/api", userAddressRouter);
+app.use("/api", adminRouter);
 
 async function start() {
   await connectDB(process.env.MONGODB_URL);

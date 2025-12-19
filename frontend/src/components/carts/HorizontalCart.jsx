@@ -8,7 +8,7 @@ import { getLikeProduct, likeProduct } from "../../redux/slice/wishListSlice"
 
 
 import { useCookies } from "react-cookie"
-import { getDeliveryDateFormatted, formatPrice } from "../../redux/slice/commonfunctionSlice"
+import { getDeliveryDateFormatted, formatPrice,successAddToCartToast } from "../../redux/slice/commonfunctionSlice"
 import { orderNowHeadelClickSlice, orderProduct, getOrderNowProduct } from "../../redux/slice/orderSlice"
 import RatingStars from "../ui/ratingStarts"
 import { warningToast } from "../../redux/slice/commonfunctionSlice"
@@ -111,6 +111,7 @@ const HorizontalCart = ({ product }) => {
         console.log(data)
         addToCartHeadelClickSlice(data, dispatch, cookie.token)
         console.log(addtoCartError)
+        successAddToCartToast("Add To Cart",data.name,navigate)
     }
 
     const headleClickLikeProduct = async (product) => {

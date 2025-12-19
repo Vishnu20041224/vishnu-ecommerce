@@ -255,7 +255,7 @@ const Home = () => {
           ))}
         </div>
       </Carousel>
-      <div className="grid gap-1 md:gap-3 lg:gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:absolute top-[70%] bg-transparent">
+      <div className="grid gap-2 md:gap-3 lg:gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:absolute top-[70%] bg-transparent">
 
         <div className="bg-white p-1 md:p-2 lg:p-3 rounded-md">
           <Link to={`/phone`} className="text-sm md:text-base lg:text-2xl font-semibold mb-2 line-clamp-1 capitalize">Featured Products </Link>
@@ -263,7 +263,7 @@ const Home = () => {
             {featuredPhones.map((product) => (
               <Link to={`/${product.catergory}/product/${product._id}`} key={product._id} className="border p-2 rounded-md hover:shadow-lg transition-shadow duration-300">
                 <img src={product.mainImg} alt={product.name} className="w-20 aspect-square object-contain mb-2 mx-auto" />
-                <h3 className="text-[8px] md:text-xs font-medium line-clamp-2">{product.ditails}</h3>
+                <h3 className="text-[9px] md:text-xs font-medium line-clamp-2 text-base/3">{product.ditails}</h3>
               </Link>
             ))}
           </div>
@@ -275,7 +275,7 @@ const Home = () => {
             {premiumShirt.map((product) => (
               <Link to={`/${product.catergory}/product/${product._id}`} key={product._id} className="border p-2 rounded-md hover:shadow-lg transition-shadow duration-300">
                 <img src={product.mainImg} alt={product.name} className="w-20 aspect-square object-contain mb-2 mx-auto" />
-                <h3 className="text-[8px] md:text-xs font-medium line-clamp-2">{product.ditails}</h3>
+                <h3 className="text-[9px] md:text-xs font-medium line-clamp-2 text-base/3">{product.ditails}</h3>
               </Link>
             ))}
           </div>
@@ -287,7 +287,7 @@ const Home = () => {
             {premiumLaptop.map((product) => (
               <Link to={`/${product.catergory}/product/${product._id}`} key={product._id} className="border p-2 rounded-md hover:shadow-lg transition-shadow duration-300">
                 <img src={product.mainImg} alt={product.name} className="w-20 aspect-square object-contain mb-2 mx-auto" />
-                <h3 className="text-[8px] md:text-xs font-medium line-clamp-2">{product.ditails}</h3>
+                <h3 className="text-[9px] md:text-xs font-medium line-clamp-2 text-base/3">{product.ditails}</h3>
               </Link>
             ))}
           </div>
@@ -299,7 +299,7 @@ const Home = () => {
             {ClassicWatch.map((product) => (
               <Link to={`/${product.catergory}/product/${product._id}`} key={product._id} className="border p-1 md:p-2 rounded-md hover:shadow-lg transition-shadow duration-300">
                 <img src={product.mainImg} alt={product.name} className="w-20 aspect-square object-contain mb-1 md:mb-2 mx-auto" />
-                <h3 className="text-[8px] md:text-xs font-medium line-clamp-2 ">{product.ditails}</h3>
+                <h3 className="text-[9px] md:text-xs font-medium line-clamp-2 text-base/3">{product.ditails}</h3>
               </Link>
             ))}
           </div>
@@ -314,7 +314,7 @@ const Home = () => {
             {latestSoundTech.map((product) => (
               <Link to={`/${product.catergory}/product/${product._id}`} key={product._id} className="border p-2 rounded-md hover:shadow-lg transition-shadow duration-300">
                 <img src={product.mainImg} alt={product.name} className="w-20 aspect-square object-contain mb-2 mx-auto" />
-                <h3 className="text-[8px] md:text-xs font-medium line-clamp-2">{product.ditails}</h3>
+                <h3 className="text-[9px] md:text-xs font-medium line-clamp-2 text-base/3">{product.ditails}</h3>
               </Link>
             ))}
           </div>
@@ -326,7 +326,7 @@ const Home = () => {
             {tvDeals.map((product) => (
               <Link to={`/${product.catergory}/product/${product._id}`} key={product._id} className="border p-2 rounded-md hover:shadow-lg transition-shadow duration-300">
                 <img src={product.mainImg} alt={product.name} className="w-20 aspect-square object-contain mb-2 mx-auto" />
-                <h3 className="text-[8px] md:text-xs font-medium line-clamp-2">{product.ditails}</h3>
+                <h3 className="text-[9px] md:text-xs font-medium line-clamp-2 text-base/3">{product.ditails}</h3>
               </Link>
             ))}
           </div>
@@ -338,7 +338,7 @@ const Home = () => {
             {stepinStyle.map((product) => (
               <Link to={`/${product.catergory}/product/${product._id}`} key={product._id} className="border p-2 rounded-md hover:shadow-lg transition-shadow duration-300">
                 <img src={product.mainImg} alt={product.name} className="w-20 aspect-square object-contain mb-2 mx-auto" />
-                <h3 className="text-[8px] md:text-xs font-medium line-clamp-2">{product.ditails}</h3>
+                <h3 className="text-[9px] md:text-xs font-medium line-clamp-2 text-base/3">{product.ditails}</h3>
               </Link>
             ))}
           </div>
@@ -350,15 +350,15 @@ const Home = () => {
             {trendingtshirt.map((product) => (
               <Link to={`/${product.catergory}/product/${product._id}`} key={product._id} className="border p-1 md:py-2 rounded-md hover:shadow-lg transition-shadow duration-300">
                 <img src={product.mainImg} alt={product.name} className="w-20 aspect-square object-contain mb-1 md:mb-2 mx-auto" />
-                <h3 className="text-[8px] md:text-xs font-medium line-clamp-2 ">{product.ditails}</h3>
+                <h3 className="text-[9px] md:text-xs font-medium line-clamp-2 text-base/3">{product.ditails}</h3>
               </Link>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="md:my-5 lg:my-7 relative">
-        <h1 className="text-base md:text-lg lg:text-2xl mb-3 py-2 ps-2 font-semibold ">Hot Delas on phone</h1>
+      <div className="md:my-5 lg:my-7 relative md:px-2 lg:px-4">
+        <h1 className="text-base md:text-lg lg:text-2xl mt-3 py-2 ps-2 font-semibold ">Hot Delas on phone</h1>
         <div ref={phoneScrollRef} className="flex gap-1 md:gap-2 lg:gap-3  w-full overflow-x-auto scroll-bar-hide">
           {[...phoneProducts].reverse().map((product) => (
             <div key={product._id} className="w-fit p-2 bg-white rounded-md border">
@@ -370,7 +370,7 @@ const Home = () => {
         <h1 onClick={phonescrollRight} className=" p-1 absolute top-1/2 right-1 bg-white cursor-pointer rounded-full"><ArrowBigRightDash /></h1>
       </div>
 
-      <div className="grid gap-1 md:gap-3 lg:gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-transparent">
+      <div className="mt-3 md:mt-4 lg:mt-5 grid gap-2 md:gap-3 lg:gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-transparent">
 
         <div className="bg-white p-1 md:p-2 lg:p-3 rounded-md">
           <Link to={`/phone`} className="text-sm md:text-base lg:text-2xl font-semibold mb-2 line-clamp-1 capitalize">ultraTech Collection </Link>
@@ -378,7 +378,7 @@ const Home = () => {
             {ultraTechCollection.map((product) => (
               <Link to={`/${product.catergory}/product/${product._id}`} key={product._id} className="border p-2 rounded-md hover:shadow-lg transition-shadow duration-300">
                 <img src={product.mainImg} alt={product.name} className="w-20 aspect-square object-contain mb-2 mx-auto" />
-                <h3 className="text-[8px] md:text-xs font-medium line-clamp-2">{product.ditails}</h3>
+                <h3 className="text-[9px] md:text-xs font-medium line-clamp-2 text-base/3">{product.ditails}</h3>
               </Link>
             ))}
           </div>
@@ -390,7 +390,7 @@ const Home = () => {
             {primeCollection.map((product) => (
               <Link to={`/${product.catergory}/product/${product._id}`} key={product._id} className="border p-2 rounded-md hover:shadow-lg transition-shadow duration-300">
                 <img src={product.mainImg} alt={product.name} className="w-20 aspect-square object-contain mb-2 mx-auto" />
-                <h3 className="text-[8px] md:text-xs font-medium line-clamp-2">{product.ditails}</h3>
+                <h3 className="text-[9px] md:text-xs font-medium line-clamp-2 text-base/3">{product.ditails}</h3>
               </Link>
             ))}
           </div>
@@ -402,7 +402,7 @@ const Home = () => {
             {proPerformanceLaptops.map((product) => (
               <Link to={`/${product.catergory}/product/${product._id}`} key={product._id} className="border p-2 rounded-md hover:shadow-lg transition-shadow duration-300">
                 <img src={product.mainImg} alt={product.name} className="w-20 aspect-square object-contain mb-2 mx-auto" />
-                <h3 className="text-[8px] md:text-xs font-medium line-clamp-2">{product.ditails}</h3>
+                <h3 className="text-[9px] md:text-xs font-medium line-clamp-2 text-base/3">{product.ditails}</h3>
               </Link>
             ))}
           </div>
@@ -414,15 +414,15 @@ const Home = () => {
             {timelessClassics.map((product) => (
               <Link to={`/${product.catergory}/product/${product._id}`} key={product._id} className="border p-1 md:p-2 rounded-md hover:shadow-lg transition-shadow duration-300">
                 <img src={product.mainImg} alt={product.name} className="w-20 aspect-square object-contain mb-1 md:mb-2 mx-auto" />
-                <h3 className="text-[8px] md:text-xs font-medium line-clamp-2 ">{product.ditails}</h3>
+                <h3 className="text-[9px] md:text-xs font-medium line-clamp-2 text-base/3">{product.ditails}</h3>
               </Link>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="md:my-5 lg:my-7 relative">
-        <h1 className="text-base md:text-lg lg:text-2xl mb-3 py-2 ps-2 font-semibold ">Prime Footwear</h1>
+      <div className="md:my-5 lg:my-7 relative md:px-2 lg:px-4">
+        <h1 className="text-base md:text-lg lg:text-2xl mt-3 py-2 ps-2 font-semibold ">Prime Footwear</h1>
         <div ref={shoeScrollRef} className="flex gap-1 md:gap-2 lg:gap-3  w-full overflow-x-auto scroll-bar-hide">
           {[...shoeProducts].reverse().map((product) => (
             <div key={product._id} className="w-fit p-2 bg-white rounded-md border">

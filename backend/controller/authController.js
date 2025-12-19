@@ -32,7 +32,7 @@ export const signup = async (req, res) => {
             _id: user._id,
             name: user.name,
             email: user.email,
-            isAdmain: user.isAdmin
+            isAdmin: user.isAdmin
         })
         return res.status(201).json({
             token,
@@ -40,7 +40,7 @@ export const signup = async (req, res) => {
                 _id: user._id,
                 name: user.name,
                 email: user.email,
-                isAdmain: user.isAdmin
+                isAdmin: user.isAdmin
             }
         })
 
@@ -66,18 +66,20 @@ export const login = async (req, res) => {
         let passwordMatch = await bcryptjs.compare(password, user.password)
         if (!passwordMatch) return res.status(401).json({ message: "Password Not Match" })
 
+        console.log("login user",user)    
+
         let token = signupToken({
             _id: user._id,
             name: user.name,
             email: user.email,
-            isAdmain: user.isAdmin
+            isAdmin: user.isAdmin
         })
         res.status(200).json({
             token, user: {
                 _id: user._id,
                 name: user.name,
                 email: user.email,
-                isAdmain: user.isAdmin
+                isAdmin: user.isAdmin
             }
         })
 

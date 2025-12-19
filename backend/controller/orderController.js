@@ -284,7 +284,7 @@ export const getOneOrderProduct = async (req, res) => {
         if (!user) return res.status(401).json({ message: "No Token please Login or Singup" })
 
         let orderId = req.params.id
-        let order = await Orders.findOne({ userId, _id: orderId })
+        let order = await Orders.findOne({_id: orderId })
         if (!order) return res.status(400).json({ message: "order was not found" })
         return res.status(200).json(order)
 

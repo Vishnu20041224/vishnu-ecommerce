@@ -4,7 +4,7 @@ import { addToCartHeadelClickSlice } from "../../redux/slice/addToCartSlice"
 import { getLikeProduct, likeProduct } from "../../redux/slice/wishListSlice"
 import { useSelector, useDispatch } from 'react-redux';
 import { useCookies } from 'react-cookie';
-import { getDeliveryDateFormatted, formatPrice } from "../../redux/slice/commonfunctionSlice"
+import { getDeliveryDateFormatted, formatPrice, successAddToCartToast } from "../../redux/slice/commonfunctionSlice"
 import RatingStars from "../ui/ratingStarts"
 import { useEffect } from 'react';
 import { getOrderNowProduct } from "../../redux/slice/orderSlice"
@@ -23,7 +23,7 @@ const VerticalCart = ({ product }) => {
 
   let addToCartHeadelClick = (product) => {
     if (!cookie.token) {
-      return warningToast("Add To Cart Failed", "Please login or Sign Up",navigate)
+      return warningToast("Add To Cart Failed", "Please login or Sign Up", navigate)
     }
     let data = {
       ...product,
@@ -36,12 +36,14 @@ const VerticalCart = ({ product }) => {
     }
     console.log(data)
     addToCartHeadelClickSlice(data, dispatch, cookie.token)
+    successAddToCartToast("Add To Cart", data.name, navigate)
+
   }
 
   const headleClickLikeProduct = async (product) => {
-    if(!cookie.token){
-      return warningToast("Like Product Failed", "Please login or Sign Up",navigate)
-    } 
+    if (!cookie.token) {
+      return warningToast("Like Product Failed", "Please login or Sign Up", navigate)
+    }
     let { _id, productId, ...rest } = product
     let data = {
       ...rest,
@@ -60,8 +62,8 @@ const VerticalCart = ({ product }) => {
   }
 
   const orderNowHeadelClick = async (product) => {
-    if(!cookie.token){
-      return warningToast("Order Failed", "Please login or Sign Up",navigate)
+    if (!cookie.token) {
+      return warningToast("Order Failed", "Please login or Sign Up", navigate)
     }
     console.log(product)
     let data = {

@@ -111,3 +111,18 @@ export const getOneOrderProduct = (id,token)=>API.get(`/order/${id}`,{
         Authorization:`Bearer ${token}`
     }
 })
+
+
+// Admin 
+
+export const adminAllOrders = (token)=>API.get(`/admin/orders`,{
+    headers:{
+        Authorization:`Bearer ${token}`
+    }
+})
+
+export const adminDeleteProduct = (token,id)=>API.delete(`/admin/product/delete/${id}`,{
+    headers:{
+        Authorization:`Bearer ${token}`
+    }
+})
